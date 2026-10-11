@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cart & Quotation | Toranj</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="index.html"
+        >TORANJ <small>Malaysia Holidays</small></a
+      >
+      <nav>
+        <a href="index.html">← Continue planning</a
+        ><a class="cartlink" href="cart.html"
+          >🛒 Cart <span id="cartCount">0</span></a
+        >
+      </nav>
+    </header>
+    <main class="wrap section">
+      <h1>Your cart & quotation</h1>
+      <div class="notice">
+        This is an indicative quotation, NOT a tax invoice or confirmed booking.
+        No payment is collected in this prototype.
+      </div>
+      <div class="cartlayout">
+        <div>
+          <div id="items"></div>
+          <div class="actions">
+            <button class="secondary" id="clear">Clear cart</button
+            ><button class="secondary" onclick="window.print()">
+              Print quotation / Save PDF
+            </button>
+          </div>
+        </div>
+        <aside class="summary">
+          <h3>Request a final quotation</h3>
+          <label class="field"
+            >Full name<input
+              id="customer"
+              autocomplete="name"
+              placeholder="Your name" /></label
+          ><label class="field"
+            >Email<input
+              id="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@example.com"
+          /></label>
+          <p class="muted">
+            We will need a confirmed hotel/flight quote and verified payment
+            amount before checkout can be enabled.
+          </p>
+          <button id="checkout" class="btn full" disabled>
+            Secure online payment · Not configured
+          </button>
+          <p class="muted">
+            Payment requires a merchant account, server-side order creation,
+            provider-hosted checkout, verified webhook and official receipt
+            issuance.
+          </p>
+        </aside>
+      </div>
+    </main>
+    <footer>© Toranj Malaysia Holidays</footer>
+    <script type="module" src="js/cart.js"></script>
+  </body>
+</html>

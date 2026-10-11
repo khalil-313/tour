@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Build a tailor-made Malaysia holiday with hotels, private transport and guided tours."
+    />
+    <title>Toranj | Malaysia Holidays</title>
+    <link rel="stylesheet" href="css/style.css" defer />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="index.html"
+        >TORANJ <small>Malaysia Holidays</small></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="#destinations">Destinations</a
+        ><a href="#planner">Build a Trip</a><a href="#about">About</a
+        ><a class="cartlink" href="cart.html" aria-label="View cart"
+          >🛒 Cart <span id="cartCount">0</span></a
+        >
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">PRIVATE • HONEYMOON • GROUP TRAVEL</span>
+        <h1>Malaysia, made for you.</h1>
+        <p>
+          Design your tropical escape, select your hotel and travel services,
+          and receive a clear itemised quotation.
+        </p>
+        <a class="btn" href="#planner">Plan my holiday →</a>
+      </div>
+    </section>
+    <main>
+      <section class="wrap section" id="destinations">
+        <span class="eyebrow">EXPLORE MALAYSIA</span>
+        <h2>Where will you go?</h2>
+        <div class="cards">
+          <article>
+            <div class="photo p1"></div>
+            <div class="pad">
+              <h3>Langkawi</h3>
+              <p>Beaches, islands and romantic resorts.</p>
+            </div>
+          </article>
+          <article>
+            <div class="photo p2"></div>
+            <div class="pad">
+              <h3>Kuala Lumpur</h3>
+              <p>Modern skyline, culture and shopping.</p>
+            </div>
+          </article>
+          <article>
+            <div class="photo p3"></div>
+            <div class="pad">
+              <h3>Penang</h3>
+              <p>Heritage streets and unforgettable food.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section tint" id="planner">
+        <div class="wrap">
+          <span class="eyebrow">TAILOR-MADE TRAVEL</span>
+          <h2>Build your holiday</h2>
+          <p class="muted">
+            All base prices are illustrative until confirmed by our travel team.
+            EUR conversion uses a dated reference rate when available.
+          </p>
+          <div class="planner">
+            <form id="tripForm">
+              <div class="grid2">
+                <label
+                  >Package type<select id="type">
+                    <option>Honeymoon</option>
+                    <option>Private Holiday</option>
+                    <option>Group Tour</option>
+                    <option>Family Holiday</option>
+                  </select></label
+                ><label
+                  >Destination<select id="destination">
+                    <option>Langkawi</option>
+                    <option>Kuala Lumpur</option>
+                    <option>Penang</option>
+                    <option>Sabah</option>
+                    <option>Cameron Highlands</option>
+                  </select></label
+                ><label
+                  >Check-in date<input id="date" type="date" required /></label
+                ><label
+                  >Number of nights<input
+                    id="nights"
+                    type="number"
+                    min="1"
+                    max="30"
+                    value="5"
+                    required /></label
+                ><label
+                  >Adults<input
+                    id="adults"
+                    type="number"
+                    min="1"
+                    max="20"
+                    value="2"
+                    required /></label
+                ><label
+                  >Rooms<input
+                    id="rooms"
+                    type="number"
+                    min="1"
+                    max="10"
+                    value="1"
+                    required /></label
+                ><label
+                  >Hotel class<select id="hotel">
+                    <option value="220">
+                      3-star hotel · RM220 / room / night
+                    </option>
+                    <option value="420" selected>
+                      4-star resort · RM420 / room / night
+                    </option>
+                    <option value="850">
+                      5-star luxury · RM850 / room / night
+                    </option>
+                  </select></label
+                ><label
+                  >Guided days (RM160/day)<input
+                    id="guideDays"
+                    type="number"
+                    min="0"
+                    max="31"
+                    value="5" /></label
+                ><label
+                  >Private vehicle<select id="vehicle">
+                    <option value="0">No private vehicle</option>
+                    <option value="280">Comfort car · RM280/day</option>
+                    <option value="450">Executive MPV · RM450/day</option>
+                    <option value="650">Premium van · RM650/day</option>
+                  </select></label
+                ><label
+                  >Vehicle days<input
+                    id="vehicleDays"
+                    type="number"
+                    min="0"
+                    max="31"
+                    value="0"
+                /></label>
+              </div>
+              <label class="check"
+                ><input id="transfer" type="checkbox" /> Airport transfer
+                (illustrative RM180)</label
+              >
+              <fieldset>
+                <legend>Return flights (optional)</legend>
+                <div class="grid2">
+                  <label
+                    >From<select id="origin">
+                      <option value="KUL">Kuala Lumpur (KUL)</option>
+                      <option value="PEN">Penang (PEN)</option>
+                      <option value="LGK">Langkawi (LGK)</option>
+                    </select></label
+                  ><label
+                    >To<select id="arrival">
+                      <option value="LGK">Langkawi (LGK)</option>
+                      <option value="KUL">Kuala Lumpur (KUL)</option>
+                      <option value="PEN">Penang (PEN)</option>
+                    </select></label
+                  ><label>Outbound<input id="depart" type="date" /></label
+                  ><label>Return<input id="return" type="date" /></label>
+                </div>
+                <button type="button" class="secondary" id="searchFlights">
+                  Check live flight offers
+                </button>
+                <div
+                  id="flightStatus"
+                  class="muted"
+                  role="status"
+                  aria-live="polite"
+                >
+                  A flight provider connection is required. No airfare is
+                  included until a verified offer is selected.
+                </div>
+                <div id="flightResults"></div>
+              </fieldset>
+            </form>
+            <aside class="summary">
+              <h3>Your estimate</h3>
+              <div id="breakdown"></div>
+              <hr />
+              <div class="total">
+                <strong>Total MYR</strong><strong id="myr">—</strong>
+              </div>
+              <div class="total">
+                <strong>EUR equivalent</strong><strong id="eur">—</strong>
+              </div>
+              <p id="rateStatus" class="muted" aria-live="polite">
+                Checking reference exchange rate…
+              </p>
+              <p class="muted">
+                Indicative quotation, not a confirmed booking. Hotel rates,
+                taxes, availability and payment are subject to final
+                verification.
+              </p>
+              <button class="btn full" id="addCart" type="button">
+                Add trip to cart
+              </button>
+              <p id="saveStatus" role="status" aria-live="polite"></p>
+            </aside>
+          </div>
+        </div>
+      </section>
+      <section class="wrap section" id="about">
+        <h2>Travel with local expertise</h2>
+        <p>
+          Private transfers, curated hotels and thoughtfully planned Malaysia
+          itineraries for international visitors.
+        </p>
+      </section>
+    </main>
+    <footer>
+      © <span id="year"></span> Toranj Malaysia Holidays · Indicative booking
+      prototype
+    </footer>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
